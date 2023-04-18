@@ -265,6 +265,7 @@ code {
   color: #d63384;
   word-wrap: break-word;
 }
+
 a > code {
   color: inherit;
 }
@@ -276,6 +277,7 @@ kbd {
   background-color: #212529;
   border-radius: 0.2rem;
 }
+
 kbd kbd {
   padding: 0;
   font-size: 1em;
@@ -2260,6 +2262,7 @@ progress {
   border-radius: 0;
   transition: color 0.15s ease-in-out, background-color 0.15s ease-in-out, border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
 }
+
 @media (prefers-reduced-motion: reduce) {
   .form-control::-webkit-file-upload-button {
     -webkit-transition: none;
@@ -2268,6 +2271,7 @@ progress {
   .form-control::file-selector-button {
     transition: none;
   }
+
 }
 .form-control:hover:not(:disabled):not([readonly])::-webkit-file-upload-button {
   background-color: #dde0e3;
@@ -2415,6 +2419,8 @@ textarea.form-control-lg {
      -moz-appearance: none;
           appearance: none;
 }
+
+
 @media (prefers-reduced-motion: reduce) {
   .form-select {
     transition: none;
@@ -2432,6 +2438,7 @@ textarea.form-control-lg {
 .form-select:disabled {
   background-color: #e9ecef;
 }
+
 .form-select:-moz-focusring {
   color: transparent;
   text-shadow: 0 0 0 #212529;
@@ -11297,9 +11304,6 @@ html {
   min-height: 15rem;
 }
 
-.table-light {
-  
-}
 
 .timeline.timeline-two .timeline-item {
   position: relative;
