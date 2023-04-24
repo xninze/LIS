@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+        <meta name="description" content="" />
+        <meta name="author" content="" />
+        <title>Submission Status</title>
+        <!-- Favicon-->
+        <link rel="icon" type="image/x-icon" href="assets/favicon.ico" />
+        <!-- Bootstrap icons-->
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.5.0/font/bootstrap-icons.css" rel="stylesheet" />
+        <!-- Core theme CSS (includes Bootstrap)-->
+        <link href="css/styles.css" rel="stylesheet"/>
+        <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" />
+    </head>
+    <body class="d-flex flex-column h-100">
+        <main class="flex-shrink-0">
+            <!-- Navigation-->
+            <nav class="shadow-sm navbar navbar-expand-lg navbar-light bg-light">
+                <div class="container px-5">
+                    <a class="navbar-brand" href="index.html">
+                        <img src="assets/Logo1 (1).png" width="200px" alt="logoLIS2023" />
+                    </a>
+                    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation"><span class="navbar-toggler-icon"></span></button>
+                    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                        <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+                            <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
+                            <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle" id="navbarDropdownBlog" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">Conference</a>
+                                <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdownBlog">
+                                    <li><a class="dropdown-item" href="FeConference.html">Conference Info</a></li>
+                                    <li><a class="dropdown-item" href="Fedownload.html">Download</a></li>
+                                </ul>
+                            <li class="nav-item"><a class="nav-link" href="FePublication.html">Publication</a></li>
+                       <li class="nav-item"><a class="nav-link" href="FeFaq.html">Contact Us</a></li>
+                       <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" id="navbarDropdownBlog" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">Registration</a>
+                            <ul class="dropdown-menu dropdown-menu-end bg-light" aria-labelledby="navbarDropdownBlog">
+                                <li><a class="dropdown-item" href="FeLISregister.html">LIS Registration</a></li>
+                                <li><a class="dropdown-item" href="FePoster.html">Poster Submission</a></li>
+                                <li><a class="dropdown-item" href="FeFullPaper.html">Full Paper Submission</a></li>
+                                <li><a class="dropdown-item" href="FeSubmissionList.html">Submission Status</a></li>
+                                </ul>
+                                <li class="nav-item"><a class="nav-link" href="FeAccount.html">My Profile</a></li>
+                            </div>
+                        </ul>
+                    </div>
+                </div>
+            </nav>
+
+            <!-- Header-->
+            <header class="bg-light text text-dark py-5">
+                <div class="container px-5 py-5">
+                    <div id="contact" class="contact-area section-padding">
+                        <div class="container">										
+                            <div class="section-title text-center">
+                                <h1>SUBMISSION STATUS</h1>
+                            </div>					
+                            <div class="header">
+                                <div class="container">
+                                    
+                            <!-- Search bar -->
+                                    <form class="form-group col-md-12">
+                                      <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
+                                      <button class="btn btn-primary" id="search-btn" type="submit">Search</button>
+                                    </form>
+                                </div>
+                            </div>
+                            <!-- End of Search bar -->
+
+            <!-- Filter options -->
+			<div class="row">
+				<div class="col-md-4">
+					<label for="reviewedFilter">Review Status :</label>
+					<select class="form-control" id="reviewedFilter">
+						<option value="">All</option>
+						<option value="reviewed">Reviewed</option>
+						<option value="notReviewed">Not Reviewed</option>
+					</select>
+				</div>
+				<div class="col-md-4">
+					<label for="otherFilter">Sub-themes :</label>
+					<select class="form-control" id="otherFilter">
+                        <option value="opt">All</option>
+						<option value="opt">Engineering & Technology</option>
+                        <option value="opt">Social Science</option>
+                        <option value="opt">Information Technology (IT) & Communication</option>
+                        <option value="opt">Environment & Health</option>
+                        <option value="opt">Technical Vocational Education and Training (TVET)</option>
+                        <option value="opt">Renewable Energy</option>
+                        <option value="opt">Commerce</option>
+                        <option value="opt">Multi-Discipline</option>
+					</select>
+				</div>
+				<div class="col-md-4">
+					<label>&nbsp;</label>
+					<button class="btn btn-primary" id="applyFiltersBtn">Apply Filters</button>
+				</div>
+			</div>
+            <!-- End of Filter options -->
+                            
+                            <!-- List of papers -->
+                            <div class="container">
+                                <div class="row">
+                                    <div class="col-md-6">
+                                        <div class="paper">
+                                            <h3>Paper 1</h3>
+                                            <p>Submission :</p>
+                                            <p>Date :</p>
+                                            <p>Status :</p>
+                                            <a href="#" class="btn btn-primary" id="more-btn">Read more</a>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <div class="paper">
+                                            <h3>Paper 2</h3>
+                                            <p>Submission :</p>
+                                            <p>Date :</p>
+                                            <p>Status :</p>
+                                            <a href="#" class="btn btn-primary" id="more-btn">Read more</a>
+                                        </div>
+                                    </div>
+                                </div>
+                            <!-- End of List of papers -->
+
+                                <!-- Pagination -->
+                                <nav aria-label="Page navigation example">
+                                  <ul class="pagination">
+                                    <li class="page-item"><a class="page-link" href="#">Previous</a></li>
+                                    <li class="page-item"><a class="page-link" href="#">1</a></li>
+                                    <li class="page-item"><a class="page-link" href="#">2</a></li>
+                                    <li class="page-item"><a class="page-link" href="#">3</a></li>
+
+                        </div><!--- END CONTAINER -->	
+                    </div>
+                </div>
+            </header>
+
+        <!-- Footer-->
+        <footer class="bg-dark py-4 mt-auto">
+            <div class="container px-5">
+                <div class="row align-items-center justify-content-between flex-column flex-sm-row">
+                    <div class="col-auto"><div class="small m-0 text-white">© 2023 LIGA ILMU SERANTAU 2023. All Rights Reserved. Design by Politeknik Mersing</div></div>
+                    <div class="col-auto">
+                        <a class="link-light small" href="#!">Privacy</a>
+                        <span class="text-white mx-1">&middot;</span>
+                        <a class="link-light small" href="#!">Terms</a>
+                        <span class="text-white mx-1">&middot;</span>
+                        <a class="link-light small" href="#!">Contact</a>
+                    </div>
+                </div>
+            </div>
+        </footer>
+        <!-- Bootstrap core JS-->
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
+        <!-- Core theme JS-->
+        <!--<script src="js/scripts.js"></script>-->
+    </body>
+</html>

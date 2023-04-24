@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+        <meta name="description" content="" />
+        <meta name="author" content="" />
+        <title>Full Paper Submission</title>
+        <!-- Favicon-->
+        <link rel="icon" type="image/x-icon" href="assets/favicon.ico" />
+        <!-- Bootstrap icons-->
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.5.0/font/bootstrap-icons.css" rel="stylesheet" />
+        <!-- Core theme CSS (includes Bootstrap)-->
+        <link href="css/styles.css" rel="stylesheet"/>
+        <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" />
+    </head>
+    <body class="d-flex flex-column h-100">
+        <main class="flex-shrink-0">
+            <!-- Navigation-->
+            <nav class="shadow-sm navbar navbar-expand-lg navbar-light bg-light">
+                <div class="container px-5">
+                    <a class="navbar-brand" href="index.html">
+                        <img src="assets/Logo1 (1).png" width="200px" alt="logoLIS2023" />
+                    </a>
+                    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation"><span class="navbar-toggler-icon"></span></button>
+                    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                        <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+                            <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
+                            <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle" id="navbarDropdownBlog" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">Conference</a>
+                                <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdownBlog">
+                                    <li><a class="dropdown-item" href="FeConference.html">Conference Info</a></li>
+                                    <li><a class="dropdown-item" href="Fedownload.html">Download</a></li>
+                                </ul>
+                            <li class="nav-item"><a class="nav-link" href="FePublication.html">Publication</a></li>
+                            <li class="nav-item"><a class="nav-link" href="FeFaq.html">Contact Us</a></li>
+                            <li class="nav-item dropdown">
+                                <a class="nav-link dropdown-toggle" id="navbarDropdownBlog" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">Registration</a>
+                                    <ul class="dropdown-menu dropdown-menu-end bg-light" aria-labelledby="navbarDropdownBlog">
+                                        <li><a class="dropdown-item" href="FeLISregister.html">LIS Registration</a></li>
+                                        <li><a class="dropdown-item" href="FePoster.html">Poster Submission</a></li>
+                                        <li><a class="dropdown-item" href="FeFullPaper.html">Full Paper Submission</a></li>
+                                        <li><a class="dropdown-item" href="FeSubmissionList.html">Submission Status</a></li>
+                                        </ul>
+                                        <li class="nav-item"><a class="nav-link" href="FeAccount.html">My Profile</a></li>
+                            </div>
+                        </ul>
+                    </div>
+                </div>
+            </nav>
+
+            <!-- Header-->
+            <header class="bg-light text text-dark py-5">
+                <div class="container px-5 py-5">
+                    <div id="contact" class="contact-area section-padding">
+                        <div class="container">										
+                            <div class="section-title text-center">
+                                <h1>LIS 2023 FULL PAPER</h1>
+                                <p>"DIGITAL TRANSFORMATION TOWARDS INFINITE POSSIBILITY"</p>
+                            </div>					
+                            <div class="row-register">
+                                <div class="col-lg-7">	
+                                    <div class="contact">
+                                        <form class="form" name="enq" method="post" action="contact.php" onsubmit="return validation();">
+                                            <div class="row">
+                                                <!--Dropdown-->
+                                                <div class="form-group col-md-3">
+                                                    <label class="category">Please CHOOSE your category :</label>
+                                                    <select class="dropdown-option" name="category"  onclick="removeChooseoption()">
+                                                        <option selected disabled>Choose</option>
+                                                        <option value="presenter">Paper Presentation & Publication</option>
+                                                        <option value="presenter">Paper Presentation ONLY</option>
+                                                        <option value="presenter">Poster Presentation ONLY</option>
+                                                        <option value="presenter">Publication ONLY</option>
+                                                        <option value="student">Student Presenter</option>
+                                                    </select><br>
+                                                </div>
+                                                <!--End Dropdown-->
+                                                
+                                                <div class="form-group col-md-12">
+                                                    <input type="text" name="name" class="form-control" placeholder="Presenter's Full Name (CAPITAL LETTER)" required="required">
+                                                </div>
+                                                <div class="form-group col-md-12">
+                                                    <input type="text" name="IC" class="form-control" placeholder="Presenter's Identification Number (MyKad) *without -" required="required">
+                                                </div>
+                                                <div class="form-group col-md-12">
+                                                    <input type="text" name="number" class="form-control" placeholder="Presenter's Contact number" required="required">
+                                                </div>
+                                                <div class="form-group col-md-12">
+                                                    <input type="text" name="email" class="form-control" placeholder="Presenter's Email Address" required="required">
+                                                </div>
+                                                <div class="form-group col-md-12">
+                                                    <textarea rows="6" name="message" class="form-control" placeholder="Presenter's Organization Name & Full Address (Mailing Purpose)" required="required"></textarea>
+                                                </div>
+                                                <div class="form-group col-md-3">
+                                                    <input type="text" name="poscode" class="form-control" placeholder="Poscode" required="required">
+                                                </div>
+                                                <div class="form-group col-md-3">
+                                                    <input type="text" name="state" class="form-control" placeholder="State" required="required">
+                                                </div>
+                                                <div class="form-group col-md-3">
+                                                    <input type="text" name="country" class="form-control" placeholder="Country" required="required">
+                                                </div>
+                                                <div class="form-group col-md-12">
+                                                    <input type="text" name="2nd-name" class="form-control" placeholder="Second Author's Name (CAPITAL LETTER)" required="required">
+                                                </div>
+                                                <div class="form-group col-md-12">
+                                                    <input type="text" name="3rd-name" class="form-control" placeholder="Third Author's Name (CAPITAL LETTER)" required="required">
+                                                </div>
+                                                <div class="form-group col-md-12">
+                                                    <input type="text" name="paper-title" class="form-control" placeholder="FULL PAPER Title" required="required">
+                                                </div>
+
+                                                <!--Dropdown-->
+                                                <div class="form-group col-md-3">
+                                                    <label class="category">Sub-themes :</label>
+                                                    <select class="dropdown-option" name="abstract-category" onclick="removeChooseoption()">
+                                                        <option selected disabled>Choose</option>
+                                                        <option value="opt">Engineering & Technology</option>
+                                                        <option value="opt">Social Science</option>
+                                                        <option value="opt">Information Technology (IT) & Communication</option>
+                                                        <option value="opt">Environment & Health</option>
+                                                        <option value="opt">Technical Vocational Education and Training (TVET)</option>
+                                                        <option value="opt">Renewable Energy</option>
+                                                        <option value="opt">Commerce</option>
+                                                        <option value="opt">Multi-Discipline</option>
+                                                    </select><br>
+                                                </div>
+                                                <!--End Dropdown-->
+
+                                                <label class="upload">Please Upload FULL Paper :</label>
+                                                <p><em>Format : ".docx"</em></p>
+                                                <p><em>For more information, please <a href="FeConference.html">click here.</a></em></p>
+                                                 
+                                                <form>
+                                                    <div class="upload-sect">
+                                                    <input type="file" id="file-upload" name="file-upload">
+                                                </div>
+
+                                                <!--Dropdown-->
+                                                <div class="form-group col-md-3">
+                                                    <label class="category">Please select the presentation mode you will choose for the session :</label>
+                                                    <select class="dropdown-option" name="mode-category" onclick="removeChooseoption()">
+                                                        <option selected disabled>Choose</option>
+                                                        <option value="opt">Face-to-Face</option>
+                                                        <option value="opt">Online</option>
+                                                    </select><br>
+                                                </div>
+                                                <!--End Dropdown-->
+
+                                                </div>
+                                            </div>
+                                        </form>
+                                        <div class="col-md-12 text-center">
+                                        <button class="button-submit">Submit</button>
+                                    </div>
+                            </div><!--- END ROW -->
+                        </div><!--- END CONTAINER -->	
+                    </div>
+                </div>
+            </header>
+
+        <!-- Footer-->
+        <footer class="bg-dark py-4 mt-auto">
+            <div class="container px-5">
+                <div class="row align-items-center justify-content-between flex-column flex-sm-row">
+                    <div class="col-auto"><div class="small m-0 text-white">© 2023 LIGA ILMU SERANTAU 2023. All Rights Reserved. Design by Politeknik Mersing</div></div>
+                    <div class="col-auto">
+                        <a class="link-light small" href="#!">Privacy</a>
+                        <span class="text-white mx-1">&middot;</span>
+                        <a class="link-light small" href="#!">Terms</a>
+                        <span class="text-white mx-1">&middot;</span>
+                        <a class="link-light small" href="#!">Contact</a>
+                    </div>
+                </div>
+            </div>
+        </footer>
+        <!-- Bootstrap core JS-->
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
+        <!-- Core theme JS-->
+        <!--<script src="js/scripts.js"></script>-->
+    </body>
+</html>
