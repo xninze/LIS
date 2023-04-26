@@ -16,7 +16,7 @@
     <body class="d-flex flex-column h-100">
         <main class="flex-shrink-0">
             <!-- Navigation-->
-            <nav class="shadow-sm navbar navbar-expand-lg navbar-light bg-light">
+            <nav id="dashboard" class="shadow-sm navbar navbar-expand-lg navbar-light bg-light fixed-top">
                 <div class="container px-5">
                     <a class="navbar-brand" href="index.html">
                         <img src="assets/Logo1 (1).png" width="200px" alt="logoLIS2023" />
@@ -43,7 +43,7 @@
 
             <!-- Header-->
             <header class="bg-light py-5">
-                <div class="container px-5">
+                <div class="container px-5 py-5 mt-5">
                     <div class="row gx-5 align-items-center justify-content-center">
                         <div class="col-lg-8 col-xl-7 col-xxl-6">
                             <div class="my-5 text-center text-xl-start">
@@ -105,7 +105,15 @@
                             <div class="text-center">
                                 <h2 class="fw-bolder">CONFERENCE AGENDA</h2>
                                 <h2 class="fw-bolder"> POLITEKNIK MERSING</h2>
+                                <!--<div class="oval text-primary fw-bolder py-3 ms-xl-5">August 8,2023</div>-->
                             </div>
+                            <div class="container">
+                                <div class="row justify-content-center align-items-center">
+                                  <div class="col-sm-6">
+                                    <div class="oval ms-xl-4 mt-3 text-primary fw-bolder">August 8th,2023</div>
+                                  </div>
+                                </div>
+                              </div>
                         </div>
                     </div>
                     <div class="row gx-5">
@@ -218,11 +226,19 @@
                 <div class="row align-items-center justify-content-between flex-column flex-sm-row">
                     <div class="col-auto"><div class="small m-0 text-white">© 2023 LIGA ILMU SERANTAU 2023. All Rights Reserved. Design by Politeknik Mersing</div></div>
                     <div class="col-auto">
-                        <a class="link-light small" href="#!">Privacy</a>
+                        <a class="link-light small" href="index.html">Home</a>
                         <span class="text-white mx-1">&middot;</span>
-                        <a class="link-light small" href="#!">Terms</a>
+                        <a class="link-light small" href="FeConference.html">Conference</a>
+                        <span class="text-white mx-1">&middot;</span>
+                        <a class="link-light small" href="FeDownload.html">Download</a>
+                        <span class="text-white mx-1">&middot;</span>
+                        <a class="link-light small" href="FePublication.html">Publication</a>
+                        <span class="text-white mx-1">&middot;</span>
+                        <a class="link-light small" href="FeRegistration.html">Register</a>
                         <span class="text-white mx-1">&middot;</span>
                         <a class="link-light small" href="FeFaq.html">Contact</a>
+                        <span class="text-white mx-1">&middot;</span>
+                        <a class="link-light small" href="FePrivacy.html">Privacy</a>
                     </div>
                 </div>
             </div>
@@ -230,6 +246,14 @@
         <!-- Bootstrap core JS-->
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
         <!-- Core theme JS-->
-        <!--<script src="js/scripts.js"></script>-->
+        <!--<script> window.onscroll = function() {
+            var dashboard = document.getElementById("dashboard");
+            if (dashboard) {
+              dashboard.style.top = window.pageYOffset + "px";
+            }
+          };
+        </script>-->
+            <!--<script src="js/scripts.js">
+        </script>-->
     </body>
 </html>

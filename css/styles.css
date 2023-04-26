@@ -4031,6 +4031,7 @@ textarea.form-control-lg {
   padding-top: 0.5rem;
   padding-bottom: 0.5rem;
 }
+
 .navbar > .container,
 .navbar > .container-fluid,
 .navbar > .container-sm,
@@ -4043,6 +4044,7 @@ textarea.form-control-lg {
   align-items: center;
   justify-content: space-between;
 }
+
 .navbar-brand {
   padding-top: 0.3125rem;
   padding-bottom: 0.3125rem;
@@ -11563,3 +11565,13 @@ float: right;
 margin-right: 10px;
 margin-top: 5px;
 }
+
+.oval {
+  width: 180px;
+  height: 50px;
+  border-radius: 50%;
+  background-color: #ffffff;
+  text-align: center;
+  padding-top: 13px;
+}
+
