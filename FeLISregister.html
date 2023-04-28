@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+        <meta name="description" content="" />
+        <meta name="author" content="" />
+        <title>LIS Registration</title>
+        <!-- Favicon-->
+        <link rel="icon" type="image/x-icon" href="assets/favicon.ico" />
+        <!-- Bootstrap icons-->
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.5.0/font/bootstrap-icons.css" rel="stylesheet" />
+        <!-- Core theme CSS (includes Bootstrap)-->
+        <link href="css/styles.css" rel="stylesheet"/>
+        <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" />
+    </head>
+    <body class="d-flex flex-column h-100">
+        <main class="flex-shrink-0">
+            <!-- Navigation-->
+            <nav class="shadow-sm navbar navbar-expand-lg navbar-light bg-light">
+                <div class="container px-5">
+                    <a class="navbar-brand" href="index.html">
+                        <img src="Asset/Logo1 (1).png" width="200px" alt="logoLIS2023" />
+                    </a>
+                    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation"><span class="navbar-toggler-icon"></span></button>
+                    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                        <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+                            <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
+                            <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle" id="navbarDropdownBlog" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">Conference</a>
+                                <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdownBlog">
+                                    <li><a class="dropdown-item" href="FeConference.html">Conference Info</a></li>
+                                    <li><a class="dropdown-item" href="Fedownload.html">Download</a></li>
+                                </ul>
+                            <li class="nav-item"><a class="nav-link" href="FePublication.html">Publication</a></li>
+                       <li class="nav-item"><a class="nav-link" href="FeFaq.html">Contact Us</a></li>
+                       <li class="nav-item"><a class="nav-link" href="FeRegistration.html">Register</a></li>
+                                </ul>
+                            
+                            </div>
+                            <a href="login.html" class="btn btn-primary">Login</a>
+                        </ul>
+                    </div>
+                </div>
+            </nav>
+
+            <!-- Header-->
+            <header class="bg-light text text-dark py-5">
+                <div class="container px-5 py-5">
+                    <div id="contact" class="contact-area section-padding">
+                        <div class="container">										
+                            <div class="section-title text-center fw-bold">
+                                <h1>REGISTER</h1>
+                                
+                            </div>					
+                            <div class="row-register">
+                                <div class="col-lg-7">	
+                                    <div class="contact">
+                                        <form class="form" name="enq" method="post" action="contact.php" onsubmit="return validation();">
+                                            <div class="row">
+                                                
+                                                <!--Dropdown-->
+                                                <div class="form-group col-md-3">
+                                                    <label class="category">Title :</label>
+                                                    <select class="dropdown-option" name="category"  onclick="removeChooseoption()">
+                                                        <option selected disabled>Choose</option>
+                                                        <option value="presenter">Dr</option>
+                                                        <option value="presenter">Mr</option>
+                                                        <option value="presenter">Mrs</option>
+                                                        <option value="presenter">Dato</option>
+                                                        <option value="presenter">Datin</option>
+                                                        <option value="presenter">Encik</option>
+                                                        <option value="presenter">Prof</option>
+                                                        <option value="presenter">Dr Prof</option>
+                                                        <option value="presenter">Other</option>
+                                                    </select><br>
+                                                </div>
+                                                <!--End Dropdown-->
+                                                <!--Dropdown-->
+                                                <div class="form-group col-md-7">
+                                                    <label class="category">Participant Category :</label>
+                                                    <select class="dropdown-option" name="category"  onclick="removeChooseoption()">
+                                                        <option selected disabled>Choose</option>
+                                                        <option value="presenter">Presenter</option>
+                                                        <option value="presenter">Audience</option>
+                                                    </select><br>
+                                                </div>
+                                                <!--End Dropdown-->
+                                                <div class="form-group col-md-12">
+                                                    <input type="text" name="email" class="form-control" placeholder="Full Name" required="required">
+                                                </div>
+                                                <div class="form-group col-md-12">
+                                                    <input type="text" name="name" class="form-control" placeholder="Email Address" required="required">
+                                                </div>
+                                                <div class="form-group col-md-4">
+                                                    <input type="text" name="IC" class="form-control" placeholder="Organization Name" required="required">
+                                                </div>
+                                                <div class="form-group col-md-4">
+                                                    <input type="text" name="number" class="form-control" placeholder="Phone Number" required="required">
+                                                </div>
+                                                <div class="form-group col-md-4">
+                                                    <input type="text" name="number" class="form-control" placeholder="IC Number " required="required">
+                                                </div>
+                                                <div class="form-group col-md-12">
+                                                    <textarea rows="6" name="message" class="form-control" placeholder="Address" required="required"></textarea>
+                                                </div>
+                                                <!--Dropdown-->
+                                                <div class="form-group col-md-3">
+                                                    <label class="category">Country :</label>
+                                                    <select class="dropdown-option" name="category"  onclick="removeChooseoption()">
+                                                        <option selected disabled>Choose</option>
+                                                        <option value="presenter">Malaysia</option>
+                                                        <option value="presenter">Indonesia</option>
+                                                        <option value="presenter">Thailand</option>
+                                                        <option value="presenter">Philippines</option>
+                                                        <option value="presenter">Singapore</option>
+                                                        <option value="presenter">Turkey</option>
+                                                    </select><br>
+                                                </div>
+                                                <!--End Dropdown-->
+                                                <div class="form-group col-md-5">
+                                                    <input type="text" name="number" class="form-control" placeholder="State" required="required">
+                                                </div>
+                                                <div class="form-group col-md-4">
+                                                    <input type="text" name="number" class="form-control" placeholder="Postcode" required="required">
+                                                </div>
+                                                
+                                                
+                                                <div class="col-md-12 text-center">
+                                                    <a href="FeLISregister_2.html"><button type="submit" value="Send form" name="submit" id="submitButton" class="button-submit" title="Submit your form!">Submit</button></a>
+                                                </div>
+                                            </div>
+                                        </form>
+                                    </div>
+                            </div><!--- END ROW -->
+                        </div><!--- END CONTAINER -->	
+                    </div>
+                </div>
+            </header>
+
+        <!-- Footer-->
+        <footer class="bg-dark py-4 mt-auto">
+            <div class="container px-5">
+                <div class="row align-items-center justify-content-between flex-column flex-sm-row">
+                    <div class="col-auto"><div class="small m-0 text-white">© 2023 LIGA ILMU SERANTAU 2023. All Rights Reserved. Design by Politeknik Mersing</div></div>
+                    <div class="col-auto">
+                        <a class="link-light small" href="#!">Privacy</a>
+                        <span class="text-white mx-1">&middot;</span>
+                        <a class="link-light small" href="#!">Terms</a>
+                        <span class="text-white mx-1">&middot;</span>
+                        <a class="link-light small" href="#!">Contact</a>
+                    </div>
+                </div>
+            </div>
+        </footer>
+        <!-- Bootstrap core JS-->
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
+        <!-- Core theme JS-->
+        <!--<script src="js/scripts.js"></script>-->
+    </body>
+</html>
