@@ -11790,7 +11790,6 @@ html {
   background: #232434;
   color: #fff;
 }
-
 /*START ADDRESS*/
 
 .single_address {
@@ -11944,7 +11943,6 @@ html {
 
 .upload-btn {
   margin-right: 60%;
-  margin-bottom: 10%;
 }
 
 .upload-btn {
@@ -11963,8 +11961,7 @@ html {
   background-color: #0b5ed7;
   border-color: #0a58ca;
 }
-
-/*----LOGIN PAGE----*/
+/*---------------------------------------------------------------------------------------------*/
 
 * {
   margin: 0;
@@ -11972,16 +11969,10 @@ html {
   box-sizing: border-box;
   font-family: "Poppins", sans-serif;
 }
-.body-login {
-  margin: 0;
-  padding: 0;
-  height: 100vh;
-  overflow: auto;
-  background-color: #ececec;
-}
+
 .center {
   position: absolute;
-  top: 50%;
+  top: 60%;
   left: 50%;
   transform: translate(-50%, -50%);
   width: 400px;
@@ -12082,4 +12073,10 @@ footer {
   position: fixed;
   bottom: 0;
   width: 100%;
+}
+
+/*------------ FORGOT PASSWORD -------------*/
+
+.label1 {
+  color: #000;
 }
