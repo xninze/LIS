@@ -64,16 +64,16 @@
                                         <form class="form" name="enq" method="post" action="contact.php" onsubmit="return validation();">
                                             <div class="row">
                                                 <div class="form-group col-md-12">
-                                                    <input type="text" name="email" class="form-control" placeholder="Email" required="required">
+                                                    <input type="text" name="email" class="form-control" placeholder="Email" required="required" readonly>
                                                 </div>
                                                 <div class="form-group col-md-12">
-                                                    <input type="text" name="name" class="form-control" placeholder="Presenter's Full Name (CAPITAL LETTER)" required="required">
+                                                    <input type="text" name="name" class="form-control" placeholder="Presenter's Full Name (CAPITAL LETTER)" required="required" readonly>
                                                 </div>
                                                 <div class="form-group col-md-12">
-                                                    <input type="text" name="IC" class="form-control" placeholder="Presenter's Identification Number (MyKad) *without -" required="required">
+                                                    <input type="text" name="IC" class="form-control" placeholder="Presenter's Identification Number (MyKad) *without -" required="required" readonly>
                                                 </div>
                                                 <div class="form-group col-md-12">
-                                                    <input type="text" name="number" class="form-control" placeholder="Presenter's Contact number" required="required">
+                                                    <input type="text" name="number" class="form-control" placeholder="Presenter's Contact number" required="required" readonly>
                                                 </div>
 
                                                 <!--Dropdown-->
@@ -86,29 +86,23 @@
                                                         <option value="presenter">Poster Presentation ONLY</option>
                                                         <option value="presenter">Publication ONLY</option>
                                                         <option value="student">Student Presenter</option>
+                                                        <option value="audience">Audience Presenter</option>
                                                     </select><br>
                                                 </div>
                                                 <!--End Dropdown-->
                                                 <div class="form-group col-md-12">
-                                                    <input type="text" name="email" class="form-control" placeholder="Presenter's Email Address" required="required">
+                                                    <input type="text" name="email" class="form-control" placeholder="Presenter's Email Address" required="required" readonly>
                                                 </div>
                                                 <div class="form-group col-md-12">
-                                                    <textarea rows="6" name="message" class="form-control" placeholder="Presenter's Organization Name & Full Address (Mailing Purpose)" required="required"></textarea>
+                                                    <input type="text" name="address" class="form-control" placeholder="Presenter's Organization Name" required="required">
+                                                </div>
+                                                <div class="form-group col-md-12">
+                                                    <textarea rows="6" name="message" class="form-control" placeholder="Address" required="required" readonly></textarea>
                                                 </div>
                                                 <div class="form-group col-md-3">
-                                                    <input type="text" name="poscode" class="form-control" placeholder="Poscode" required="required">
+                                                    <input type="text" name="poscode" class="form-control" placeholder="Poscode" required="required" readonly>
                                                 </div>
 
-                                                <!--Dropdown-->
-                                                <div class="form-group col-md-4">
-                                                    <label for="state">State :</label>
-                                                    <select id="state" class="dropdown-option" name="category"  onclick="removeChooseoption()">
-                                                        <option selected disabled>Choose</option>
-                                                        <option value="">-- Select State --</option>
-                                                    </select><br>
-                                                </div>
-                                                <!--End Dropdown-->
-                                                
                                                 <!--Dropdown-->
                                                 <div class="form-group col-md-3">
                                                     <label class="category">Country :</label>
@@ -119,6 +113,16 @@
                                                         <option value="taiwan">Taiwan</option>
                                                         <option value="vietnam">Vietnam</option>
                                                         <option value="singapore">Singapore</option>
+                                                    </select><br>
+                                                </div>
+                                                <!--End Dropdown-->
+                                                
+                                                <!--Dropdown-->
+                                                <div class="form-group col-md-4">
+                                                    <label for="state">State :</label>
+                                                    <select id="state" class="dropdown-option" name="category"  onclick="removeChooseoption()">
+                                                        <option selected disabled>Choose</option>
+                                                        <option value="">-- Select State --</option>
                                                     </select><br>
                                                 </div>
                                                 <!--End Dropdown-->
@@ -176,15 +180,54 @@
                                                 </div>
                                                 <!--End Dropdown-->
 
+                                                <!-- HTML button element that will trigger the file upload -->
                                                 <label class="upload">Please Upload ABSTRACT Paper :</label>
                                                 <p><em>Format : ".docx"</em></p>
-                                                <p><em>For more information, please <a href="FeConference.html">click here.</a></em></p>
-                                                 
+                                                <p><em>For more information, please <a href="FeDownload.html">click here.</a></em></p>
                                                 <form>
-                                                    <div class="upload-sect">
+                                                <div class="upload-sect">
                                                     <input type="file" id="file-upload" name="file-upload">
                                                 </div>
+                                                </form>
 
+                                                <!-- HTML modal popup element -->
+                                                <div id="myModal" class="modal">
+                                                <div class="modal-content">
+                                                    <span class="close">&times;</span>
+                                                    <p>Please upload a .docx file.</p>
+                                                </div>
+                                                </div>
+
+                                                <!-- JavaScript code that will create and show the popup -->
+                                                <script>
+                                                // Get a reference to the file upload input element
+                                                const fileUpload = document.getElementById("file-upload");
+
+                                                // Get a reference to the modal popup element and the close button
+                                                const modal = document.getElementById("myModal");
+                                                const closeButton = document.getElementsByClassName("close")[0];
+
+                                                // Add a change event listener to the file upload input
+                                                fileUpload.addEventListener("change", function() {
+                                                    // Get the selected file and its type
+                                                    const file = this.files[0];
+                                                    const fileType = file.type;
+
+                                                    // If the file type is not .docx, show the modal popup
+                                                    if (fileType !== "application/vnd.openxmlformats-officedocument.wordprocessingml.document") {
+                                                    modal.style.display = "block";
+                                                    // Clear the file upload input
+                                                    this.value = null;
+                                                    }
+                                                });
+
+                                                // Add a click event listener to the close button
+                                                closeButton.addEventListener("click", function() {
+                                                    // Hide the modal popup
+                                                    modal.style.display = "none";
+                                                });
+                                                </script>
+                                                    
                                                 <!--Dropdown-->
                                                 <div class="form-group col-md-3">
                                                     <label class="category">Please select the presentation mode you will choose for the session :</label>
@@ -195,12 +238,47 @@
                                                     </select><br>
                                                 </div>
                                                 <!--End Dropdown-->
+                                            
 
+                                                <!-- HTML button element that will trigger the modal popup -->
                                                 <div class="col-md-12 text-center">
-                                                    <button type="submit" value="Send form" name="submit" id="submitButton" class="button-submit" title="Submit your form!">Submit</button>
+                                                    <button type="submit" id="submitButton" class="button-submit" title="Submit your form!">Submit</button>
                                                 </div>
+                                                
+                                                <!-- HTML modal popup element -->
+                                                <div id="btn-myModal" class="sub-modal">
+                                                    <div class="sub-modal-content">
+                                                    <span class="sub-close">&times;</span>
+                                                    <p>Thank you for submitting!</p>
+                                                    </div>
+                                                </div>
+                                                
+                                                <!-- JavaScript code that will create and show the popup -->
+                                                <script>
+                                                    // Get a reference to the submit button element
+                                                    const submitButton = document.getElementById("submitButton");
+                                                
+                                                    // Get a reference to the modal popup element and the close button
+                                                    const btnmodal = document.getElementById("btn-myModal");
+                                                    const submitcloseButton = btnmodal.getElementsByClassName("sub-close")[0];
+                                                
+                                                    // Add a click event listener to the submit button
+                                                    submitButton.addEventListener("click", function() {
+                                                    // Show the modal popup
+                                                    btnmodal.style.display = "block";
+                                                    });
+                                                
+                                                    // Add a click event listener to the close button
+                                                    submitcloseButton.addEventListener("click", function() {
+                                                    // Hide the modal popup
+                                                    btnmodal.style.display = "none";
+                                                    // Redirect to another page using window.location
+                                                    window.location.href = "FeLISregister.html";
+                                                    });
+                                                </script>
                                             </div>
                                         </form>
+                                        
                                     </div>
                             </div><!--- END ROW -->
                         </div><!--- END CONTAINER -->	

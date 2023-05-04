@@ -64,10 +64,10 @@
                                         <form class="form" name="enq" method="post" action="contact.php" onsubmit="return validation();">
                                             <div class="row">
                                                 <div class="form-group col-md-12">
-                                                    <input type="text" name="name" class="form-control" placeholder="Presenter's Full Name (CAPITAL LETTER)" required="required">
+                                                    <input type="text" name="name" class="form-control" placeholder="Presenter's Full Name (CAPITAL LETTER)" required="required" readonly>
                                                 </div>
                                                 <div class="form-group col-md-12">
-                                                    <input type="text" name="IC" class="form-control" placeholder="Presenter's Identification Number (MyKad) *without -" required="required">
+                                                    <input type="text" name="IC" class="form-control" placeholder="Presenter's Identification Number (MyKad) *without -" required="required" readonly>
                                                 </div>
                                                 <div class="form-group col-md-12">
                                                     <input type="text" name="poster-title" class="form-control" placeholder="POSTER Title" required="required">
@@ -88,15 +88,55 @@
                                                     </select><br>
                                                 </div>
                                                 <!--End Dropdown-->
-                                                
-                                                <label class="upload">Please Upload POSTER design :</label>
-                                                <p><em>Poster design format (SIZE & FORMAT)</em></p>
                                                  
+                                                <!-- HTML button element that will trigger the file upload -->
+                                                <label class="upload">Please Upload POSTER Paper :</label>
+                                                <p><em>Poster design format (SIZE & FORMAT)</em></p>
+                                                <p><em>For more information, please <a href="FeDownload.html">click here.</a></em></p>
                                                 <form>
-                                                    <div class="upload-sect">
+                                                <div class="upload-sect">
                                                     <input type="file" id="file-upload" name="file-upload">
                                                 </div>
-                                                  </form>
+                                                </form>
+
+                                                <!-- HTML modal popup element -->
+                                                <div id="myModal" class="modal">
+                                                <div class="modal-content">
+                                                    <span class="close">&times;</span>
+                                                    <p>Please upload a .png, .jpg, .jpeg file.</p>
+                                                </div>
+                                                </div>
+
+                                                <!-- JavaScript code that will create and show the popup -->
+                                                <script>
+                                                // Get a reference to the file upload input element
+                                                const fileUpload = document.getElementById("file-upload");
+
+                                                // Get a reference to the modal popup element and the close button
+                                                const modal = document.getElementById("myModal");
+                                                const closeButton = document.getElementsByClassName("close")[0];
+
+                                                // Add a change event listener to the file upload input
+                                                fileUpload.addEventListener("change", function() {
+                                                    // Get the selected file and its type
+                                                    const file = this.files[0];
+                                                    const fileType = file.type;
+
+                                                    // If the file type is not .png, .jpg, .jpeg, show the modal popup
+                                                    if (fileType !== "image/png" && fileType !== "image/jpg" && fileType !== "image/jpeg") {
+                                                        modal.style.display = "block";
+                                                        // Clear the file upload input
+                                                        this.value = null;
+                                                    }
+                                                });
+
+
+                                                // Add a click event listener to the close button
+                                                closeButton.addEventListener("click", function() {
+                                                    // Hide the modal popup
+                                                    modal.style.display = "none";
+                                                });
+                                                </script>
                                                   
                                                 <!--Dropdown-->
                                                 <div class="form-group col-md-3">
@@ -108,10 +148,43 @@
                                                     </select><br>
                                                 </div>
                                                 <!--End Dropdown-->
-
+                                                
+                                                <!-- HTML button element that will trigger the modal popup -->
                                                 <div class="col-md-12 text-center">
-                                                    <button type="submit" value="Send form" name="submit" id="submitButton" class="button-submit" title="Submit your form!">Submit</button>
+                                                    <button type="submit" id="submitButton" class="button-submit" title="Submit your form!">Submit</button>
                                                 </div>
+                                                
+                                                <!-- HTML modal popup element -->
+                                                <div id="btn-myModal" class="sub-modal">
+                                                    <div class="sub-modal-content">
+                                                    <span class="sub-close">&times;</span>
+                                                    <p>Thank you for submitting!</p>
+                                                    </div>
+                                                </div>
+                                                
+                                                <!-- JavaScript code that will create and show the popup -->
+                                                <script>
+                                                    // Get a reference to the submit button element
+                                                    const submitButton = document.getElementById("submitButton");
+                                                
+                                                    // Get a reference to the modal popup element and the close button
+                                                    const btnmodal = document.getElementById("btn-myModal");
+                                                    const submitcloseButton = btnmodal.getElementsByClassName("sub-close")[0];
+                                                
+                                                    // Add a click event listener to the submit button
+                                                    submitButton.addEventListener("click", function() {
+                                                    // Show the modal popup
+                                                    btnmodal.style.display = "block";
+                                                    });
+                                                
+                                                    // Add a click event listener to the close button
+                                                    submitcloseButton.addEventListener("click", function() {
+                                                    // Hide the modal popup
+                                                    btnmodal.style.display = "none";
+                                                    // Redirect to another page using window.location
+                                                    window.location.href = "FeLISregister.html";
+                                                    });
+                                                </script>
                                             </div>
                                         </form>
                                     </div>
