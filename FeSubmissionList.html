@@ -109,73 +109,25 @@
                                 <table>
                                   <thead class="thead-dark bg-dark">
                                     <tr>
-                                      <th>Paper ID</th>
-                                      <th>Paper Title</th>
-                                      <th>Review Status</th>
-                                      <th>Submission Type</th>
+                                      <th id="paperID">Paper ID</th>
+                                      <th id="paperTitle">Paper Title</th>
+                                      <th id="reviewStatus">Review Status</th>
+                                      <th id="paperType">Submission Type</th>
                                       <th class="col-md-2"></th>
                                     </tr>
                                   </thead>
                                   <tbody>
-                                    <tr>
-                                      <td>1550255</td>
-                                      <td>Paper_Title01</td>
-                                      <td>Abstract</td>
-                                      <td class="reviewed">Reviewed</td>
-                                      <td>
-                                        <a href="" class="btn btn-primary">View Paper</a>
-                                      </td>
-                                    </tr>
-                                    <tr>
-                                        <td>1550256</td>
-                                        <td>Paper_Title02</td>
-                                        <td>Abstract</td>
-                                        <td class="notReviewed">Pending</td>
-                                        <td>
-                                          <a href="" class="btn btn-primary">View Paper</a>
-                                        </td>
-                                      </tr>
-                                    </tr>
-                                    <tr>
-                                      <td>1550257</td>
-                                      <td>Paper_Title03</td>
-                                      <td>Full Paper</td>
-                                      <td class="notReviewed">Pending</td>
-                                      <td><a href="" class="btn btn-primary">View Paper</a>
-                                      </td>
-                                    </tr>
-                                    <tr>
-                                        <td>1550258</td>
-                                        <td>Paper_Title04</td>
-                                        <td>Abstract</td>
-                                        <td class="reviewed">Reviewed</td>
-                                        <td><a href="" class="btn btn-primary">View Paper</a>
-                                        </td>
-                                      </tr>
-                                    <tr>
-                                        <td>1550259</td>
-                                        <td>Paper_Title05</td>
-                                        <td>Full Paper</td>
-                                        <td class="notReviewed">Pending</td>
-                                        <td><a href="" class="btn btn-primary">View Paper</a>
-                                        </td>
-                                      </tr>
-                                    <tr>
-                                        <td>1550260</td>
-                                        <td>Paper_Title06</td>
-                                        <td>Abstract</td>
-                                        <td class="reviewed">Reviewed</td>
-                                        <td><a href="" class="btn btn-primary">View Paper</a>
-                                        </td>
-                                      </tr>
-                                    <tr>
-                                        <td>1550261</td>
-                                        <td>Paper_Title07</td>
-                                        <td>Full Paper</td>
-                                        <td class="notReviewed">Not Reviewed</td>
-                                        <td><a href="" class="btn btn-primary">View Paper</a>
-                                        </td>
-                                      </tr>
+                                    @foreach($paper-table as $paper-table)
+                                        <tr>
+                                            <td>{{ $paper-table->paperID }}</td>
+                                            <td>{{ $paper-table->paperTitle }}</td>
+                                            <td>{{ $paper-table->reviewStatus }}</td>
+                                            <td>{{ $paper-table->paperType }}</td>
+                                            <td>
+                                                <a href="" class="btn btn-primary">View Paper</a>
+                                              </td>
+                                        </tr>
+                                        @endforeach
                                   </tbody>
                                 </table>
                               </div>
