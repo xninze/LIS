@@ -127,56 +127,19 @@
                                                 </div>
                                             </div>
                                            
-                                            <!--Dropdown-->
                                             <div class="col-md-3">
-                                                <label class="country">Country :</label>
-                                                <select id="country-profile" class="form-control" name="category" onclick="removeChooseoption()">
-                                                    <option selected disabled>Choose</option>
-                                                    <option value="malaysia">Malaysia</option>
-                                                    <option value="indonesia">Indonesia</option>
-                                                    <option value="taiwan">Taiwan</option>
-                                                    <option value="vietnam">Vietnam</option>
-                                                    <option value="singapore">Singapore</option>
-                                                </select><br>
+                                                <div class="form-group">
+                                                      <label>Country :</label>
+                                                      <input type="text" class="form-control" readonly>
+                                                </div>
                                             </div>
-                                            <!--End Dropdown-->
-                                            
-                                            <!--Dropdown-->
-                                            <div class="col-md-3 ">
-                                                <label for="state">State :</label>
-                                                <select id="state" class="form-control" name="category" onclick="removeChooseoption()">
-                                                    <option selected disabled>Choose</option>
-                                                    <option value="">-- Select State --</option>
-                                                </select><br>
-                                            </div>
-                                            <!--End Dropdown-->
-                                            
-                                        <script>
-                                        $(document).ready(function() {
-                                        // Define an object that maps countries to states
-                                        var stateOptions = {
-                                        malaysia: ["Johor", "Kedah", "Kelantan", "Melaka", "Negeri Sembilan", "Pahang", "Perak", "Perlis", "Penang", "Sabah", "Sarawak", "Selangor", "Terengganu"],
-                                        indonesia: ["Aceh", "Bali", "Bangka Belitung", "Banten", "Bengkulu", "Gorontalo", "Jakarta", "Jambi", "Jawa Barat", "Jawa Tengah", "Jawa Timur", "Kalimantan Barat", "Kalimantan Selatan", "Kalimantan Tengah", "Kalimantan Timur", "Kepulauan Riau", "Lampung", "Maluku", "Maluku Utara", "Nusa Tenggara Barat", "Nusa Tenggara Timur", "Papua", "Papua Barat", "Riau", "Sulawesi Barat", "Sulawesi Selatan", "Sulawesi Tengah", "Sulawesi Tenggara", "Sulawesi Utara", "Sumatera Barat", "Sumatera Selatan", "Sumatera Utara", "Yogyakarta"],
-                                        taiwan: ["Changhua", "Chiayi", "Hsinchu", "Hualien", "Kaohsiung", "Keelung", "Miaoli", "Nantou", "Penghu", "Pingtung", "Taichung", "Tainan", "Taipei", "Taitung", "Taoyuan", "Yilan", "Yunlin"],
-                                        singapore: ["Central Region", "East Region", "North Region", "North-East Region", "West Region"],
-                                        vietnam: ["Ho Chi Minh City", "Hanoi", "Can Tho", "Da Nang", "Hai Phong", "Ba Ria-Vung Tau", "Bac Giang", "Bac Kan", "Bac Lieu", "Bac Ninh", "Ben Tre", "Binh Dinh", "Binh Duong", "Binh Phuoc", "Binh Thuan", "Ca Mau", "Cao Bang", "Dak Lak", "Dak Nong", "Dien Bien", "Dong Nai", "Dong Thap", "Gia Lai", "Ha Giang", "Ha Nam", "Ha Tinh", "Hai Duong", "Hau Giang", "Hoa Binh", "Hung Yen", "Khanh Hoa", "Kien Giang", "Kon Tum", "Lai Chau", "Lam Dong", "Lang Son", "Lao Cai", "Long An", "Nam Dinh", "Nghe An", "Ninh Binh", "Ninh Thuan", "Phu Tho", "Quang Binh", "Quang Nam", "Quang Ngai", "Quang Ninh", "Quang Tri", "Soc Trang", "Son La", "Tay Ninh", "Thai Binh", "Thai Nguyen", "Thanh Hoa", "Thua Thien-Hue", "Tien Giang", "Tra Vinh", "Yen Bai"]
-                                        };
 
-                                        // When a country is selected, update the options in the state dropdown
-                                        $('#country').change(function() {
-                                            var selectedCountry = $(this).val();
-                                            var stateOptionsHtml = '<option value="">-- Select State --</option>';
-                                            if (selectedCountry && stateOptions[selectedCountry]) {
-                                            var states = stateOptions[selectedCountry];
-                                            for (var i = 0; i < states.length; i++) {
-                                                stateOptionsHtml += '<option value="' + states[i] + '">' + states[i] + '</option>';
-                                            }
-                                            }
-                                            $('#state').html(stateOptionsHtml);
-                                        });
-                                        });
-                                        </script>
-                                        
+                                            <div class="col-md-3">
+                                                <div class="form-group">
+                                                      <label>State :</label>
+                                                      <input type="text" class="form-control" readonly>
+                                                </div>
+                                            </div>
                                         </div>
                                         <div>
                                             <button class="btn btn-primary">Update</button>
@@ -226,11 +189,19 @@
                 <div class="row align-items-center justify-content-between flex-column flex-sm-row">
                     <div class="col-auto"><div class="small m-0 text-white">© 2023 LIGA ILMU SERANTAU 2023. All Rights Reserved. Design by Politeknik Mersing</div></div>
                     <div class="col-auto">
-                        <a class="link-light small" href="#!">Privacy</a>
+                        <a class="link-light small" href="index.html">Home</a>
                         <span class="text-white mx-1">&middot;</span>
-                        <a class="link-light small" href="#!">Terms</a>
+                        <a class="link-light small" href="FeConference.html">Conference</a>
+                        <span class="text-white mx-1">&middot;</span>
+                        <a class="link-light small" href="FeDownload.html">Download</a>
+                        <span class="text-white mx-1">&middot;</span>
+                        <a class="link-light small" href="FePublication.html">Publication</a>
+                        <span class="text-white mx-1">&middot;</span>
+                        <a class="link-light small" href="FeRegistration.html">Register</a>
                         <span class="text-white mx-1">&middot;</span>
                         <a class="link-light small" href="FeFaq.html">Contact</a>
+                        <span class="text-white mx-1">&middot;</span>
+                        <a class="link-light small" href="FePrivacy.html">Privacy</a>
                     </div>
                 </div>
             </div>

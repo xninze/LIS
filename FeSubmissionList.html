@@ -62,8 +62,8 @@
                                     
                             <!-- Search bar -->
                                     <form class="form-group col-md-12">
-                                      <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
-                                      <button class="btn btn-primary" id="search-btn" type="submit">Search</button>
+                                      <input class="form-control mr-sm-2" type="search" placeholder="Search by Paper Title" aria-label="Search">
+                                      <button class="btn btn-primary mt-5" id="search-btn" type="submit">Search</button>
                                     </form>
                                 </div>
                             </div>
@@ -92,32 +92,53 @@
                         <option value="opt">Commerce</option>
                         <option value="opt">Multi-Discipline</option>
 					</select>
-                    <div class="col-md-4">
-                        <label for="reviewedFilter">Sub-theme :</label>
-                        <select class="form-control" id="reviewedFilter">
-                        <option value="opt">All</option>
-						<option value="opt">Engineering & Technology</option>
-                        <option value="opt">Social Science</option>
-                        <option value="opt">Information Technology (IT) & Communication</option>
-                        <option value="opt">Environment & Health</option>
-                        <option value="opt">Technical Vocational Education and Training (TVET)</option>
-                        <option value="opt">Renewable Energy</option>
-                        <option value="opt">Commerce</option>
-                        <option value="opt">Multi-Discipline</option>
-                        </select>
-                    </div>
 				</div>
-				
+                <div class="col-md-4">
+					<label for="formFilter">Submission Type :</label>
+					<select class="form-control" id="formFilter">
+						<option value="">All</option>
+						<option value="reviewed">Abstract Paper</option>
+						<option value="notReviewed">Full Paper</option>
+					</select>
+				</div>
 			</div>
             <!-- End of Filter options -->
                             
-                            <!-- List of papers -->
-                            
-                            <!-- End of List of papers -->
+                            <!-- Table of papers -->
+                            <table class="table table-hover mt-5">
+                                <thead>
+                                  <tr>
+                                    <th scope="col">NO.</th>
+                                    <th scope="col">PAPER</th>
+                                    <th scope="col">SUB-THEMES</th>
+                                    <th scope="col">STATUS</th>
+                                  </tr>
+                                </thead>
+                                <tbody>
+                                  <tr>
+                                    <th scope="row">1</th>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                  </tr>
+                                  <tr>
+                                    <th scope="row">2</th>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                  </tr>
+                                  <tr>
+                                    <th scope="row">3</th>
+                                    <td colspan="2"></td>
+                                    <td></td>
+                                  </tr>
+                                </tbody>
+                              </table>
+                            <!-- End of Table of papers -->
 
                                 <!-- Pagination -->
                                 <nav aria-label="Page navigation example">
-                                  <ul class="pagination">
+                                  <ul class="pagination mt-5 mb-5">
                                     <li class="page-item"><a class="page-link" href="#">Previous</a></li>
                                     <li class="page-item"><a class="page-link" href="#">1</a></li>
                                     <li class="page-item"><a class="page-link" href="#">2</a></li>
@@ -134,11 +155,19 @@
                 <div class="row align-items-center justify-content-between flex-column flex-sm-row">
                     <div class="col-auto"><div class="small m-0 text-white">© 2023 LIGA ILMU SERANTAU 2023. All Rights Reserved. Design by Politeknik Mersing</div></div>
                     <div class="col-auto">
-                        <a class="link-light small" href="#!">Privacy</a>
+                        <a class="link-light small" href="index.html">Home</a>
                         <span class="text-white mx-1">&middot;</span>
-                        <a class="link-light small" href="#!">Terms</a>
+                        <a class="link-light small" href="FeConference.html">Conference</a>
                         <span class="text-white mx-1">&middot;</span>
-                        <a class="link-light small" href="#!">Contact</a>
+                        <a class="link-light small" href="FeDownload.html">Download</a>
+                        <span class="text-white mx-1">&middot;</span>
+                        <a class="link-light small" href="FePublication.html">Publication</a>
+                        <span class="text-white mx-1">&middot;</span>
+                        <a class="link-light small" href="FeRegistration.html">Register</a>
+                        <span class="text-white mx-1">&middot;</span>
+                        <a class="link-light small" href="FeFaq.html">Contact</a>
+                        <span class="text-white mx-1">&middot;</span>
+                        <a class="link-light small" href="FePrivacy.html">Privacy</a>
                     </div>
                 </div>
             </div>
