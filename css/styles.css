@@ -1148,7 +1148,7 @@ progress {
 
   .col-md-2 {
     flex: 0 0 auto;
-    width: 16.66666667%;
+    width: 22%;
   }
 
   .col-md-3 {
@@ -11575,3 +11575,233 @@ margin-top: 5px;
   padding-top: 13px;
 }
 
+
+/* Start Payment Treasurer*/
+
+.payment-table {
+  font-family: Arial, sans-serif;
+  border-collapse: collapse;
+  width: 100%;
+  margin-bottom: 20px;
+  padding-left: 12px;
+  padding-right: 12px;
+}
+
+.payment-table table {
+  width: 100%;
+}
+
+.payment-table th, .payment-table td {
+  padding: 10px;
+  text-align: left;
+  vertical-align: middle;
+  border: 1px solid #ddd;
+}
+
+.payment-table th {
+  font-weight: bold;
+}
+
+
+
+.payment-table .btn {
+  float: left;
+  
+}
+
+#paymentSearch {
+  flex-wrap: nowrap;
+  margin-left: 55%;
+}
+
+#paymentSearchBar {
+  margin-top: 8px;
+  margin-left: 20%;
+}
+
+#paymentSearchBtn {
+  
+  height: 38px;
+  margin-top: 8px;
+  overflow-x: hidden;
+}
+
+.payment-table {
+  border-color: #000;
+  border-width: 10px;
+}
+
+table,
+th,
+td {
+    border: 1px solid black;
+    border-collapse: collapse;
+    padding: 5px;
+}
+ 
+.payment-table tr:nth-child(even) {
+    background-color: #EEEEEE;
+}
+
+select {
+  width: 200px;
+  padding: 8px;
+  font-size: 16px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  background-color: #fff;
+}
+
+/*option.paid {
+  color: green;
+
+}
+
+option.pending {
+  color: red;
+
+}*/
+
+/*End Payment Treasurer*/
+
+
+/* Profile Picture Styles */
+.profile-picture {
+  width: 200px;
+  height: 200px;
+  margin: 0 auto;
+  border-radius: 50%;
+  overflow: hidden;
+  margin-left: 2rem;
+  margin-bottom: 1rem;
+}
+
+.profile-picture img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* End Profile Picture Styles */
+
+/*--------------------------------------------LOGIN PAGE---------------------------------------------*/
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Poppins", sans-serif;
+}
+
+
+.center h1 {
+  text-align: center;
+  padding: 20px 0;
+  border-bottom: 1px solid silver;
+}
+.center form {
+  padding: 0 40px;
+  box-sizing: border-box;
+}
+form .txt_field {
+  position: relative;
+  border-bottom: 2px solid #adadad;
+  margin: 30px 0;
+}
+.txt_field input {
+  width: 100%;
+  padding: 0 5px;
+  height: 40px;
+  font-size: 16px;
+  border: none;
+  background: none;
+  outline: none;
+}
+.txt_field label {
+  position: absolute;
+  top: 50%;
+  left: 5px;
+  color: #adadad;
+  transform: translateY(-50%);
+  font-size: 16px;
+  pointer-events: none;
+  transition: 0.5s;
+}
+.txt_field span::before {
+  content: "";
+  position: absolute;
+  top: 40px;
+  left: 0;
+  width: 0%;
+  height: 2px;
+  background: #0d6efd;
+  transition: 0.5s;
+}
+.txt_field input:focus ~ label,
+.txt_field input:valid ~ label {
+  top: -5px;
+  color: #0d6efd;
+}
+.txt_field input:focus ~ span::before,
+.txt_field input:valid ~ span::before {
+  width: 100%;
+}
+.pass {
+  margin: -5px 0 20px 5px;
+  color: #0d6efd;
+  cursor: pointer;
+}
+.pass:hover {
+  text-decoration: underline;
+}
+input[type="submit"] {
+  width: 100%;
+  height: 50px;
+  border: 1px solid;
+  background-color: #0d6efd;
+  border-radius: 25px;
+  font-size: 18px;
+  color: #e9f4fb;
+  font-weight: 700;
+  cursor: pointer;
+  outline: none;
+}
+input[type="submit"]:hover {
+  border-color: #0d6efd;
+  transition: 0.5s;
+}
+.signup_link {
+  margin: 30px 0;
+  text-align: center;
+  font-size: 16px;
+  color: #666666;
+}
+.signup_link a {
+  color: #0d6efd;
+  text-decoration: none;
+}
+.signup_link a:hover {
+  text-decoration: underline;
+}
+
+.label1 {
+  color: #000;
+}
+
+#loginBox {
+  margin-top: 40%;
+  padding-bottom: 1%;
+  position: relative;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 400px;
+  border-radius: 10px;
+  background-color: #fefefe;
+}
+
+.pass {
+  float: left;
+}
+
+/*--------------------------------------------END LOGIN PAGE---------------------------------------------*/

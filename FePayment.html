@@ -5,7 +5,7 @@
         <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
         <meta name="description" content="" />
         <meta name="author" content="" />
-        <title>Registration</title>
+        <title>Payment</title>
         <!-- Favicon-->
         <link rel="icon" type="image/x-icon" href="assets/favicon.ico" />
         <!-- Bootstrap icons-->
@@ -27,14 +27,15 @@
                             <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
                             <li class="nav-item dropdown">
                             <a class="nav-link dropdown-toggle" id="navbarDropdownBlog" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">Conference</a>
-                                <ul class="dropdown-menu dropdown-menu-end bg-light" aria-labelledby="navbarDropdownBlog">
+                                <ul class="dropdown-menu dropdown-menu-end bg-light" aria-labelledby="navbarDropdownBlog">      
                                     <li><a class="dropdown-item" href="FeConference.html">Conference Info</a></li>
-                                    <li><a class="dropdown-item" href="Fedownload.html">Downloads</a></li>
+                                    <li><a class="dropdown-item" href="FeDownload.html">Downloads</a></li>
                                 </ul>
                                 <li class="nav-item"><a class="nav-link" href="FePublication.html">Publication</a></li>
+                                <li class="nav-item"><a class="nav-link" href="FePayment.html">Payment</a></li>
                                 <li class="nav-item"><a class="nav-link" href="FeFaq.html">Contact Us</a></li>
-                                <li class="nav-item"><a class="nav-link" href="FeRegistration.html">Registration</a></li>
-                            <a href="login.html" class="btn btn-primary">Login</a>
+                                <li class="nav-item"><a class="nav-link" href="FeAccount.html">My Profile</a></li>
+                                <a href="FeLogin.html" class="btn btn-primary">Sign Out</a>
                             </div>
                         </ul>
                     </div>
@@ -42,128 +43,200 @@
             </nav>
 
             <!-- Header-->
-            <header class="bg-light py-5">
+            <header class="bg-light text text-dark py-5">
                 <div class="container px-5 py-5 mt-5">
-                    <div class="row gx-5 align-items-center justify-content-center">
-                        <div class="col-lg-8 col-xl-7 col-xxl-6">
-                            <div class="my-5 text-center text-xl-start">
-                                <h1 class="display-5 fw-bolder text-black mb-2">Liga Ilmu Serantau 2023 9th International Conference</h1>
-                                <p class="lead fw-normal text-black-50 mb-4">Welcome to the 9th annual Liga Ilmu Serantau 2023, a milestone event that celebrates almost a decade of research, and collaboration. Since its inception, this conference has brought together experts, researchers, practitioners, and enthusiasts from across industries to explore the latest developments and trends in many fields. </p>
-                                <div class="d-grid gap-3 d-sm-flex justify-content-sm-center justify-content-xl-start">
-                                    <a class="btn btn-primary btn-lg px-4 me-sm-3" href="#features">Register now</a>
+                    <div id="contact" class="contact-area section-padding">
+                        <div class="container mt-5">										
+                            <div class="section-title text-center">
+                                <h1>PAYMENT</h1>
+                            </div>					
+                            <div class="header">
+                                <div class="container">
+                                    
+                            <!-- Search bar -->
+                                    
+                            <!-- End of Search bar -->
+
+            <!-- Filter options -->
+                <div id="paymentSearch" class="row col-md-6">
+                    <form id="paymentSearchBar" class="form-group col-md-6">
+                        <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
+                    </form>
+                    <div class="row col-md-2">
+                    <button id="paymentSearchBtn" class="btn btn-primary mb-2" id="search-btn" type="submit">Search</button>  
+                    </div>
+                </div>
+            <!-- End of Filter options -->
+                            
+                            <!-- List of papers -->
+                            <div class="payment-table">
+                                <table>
+                                  <thead>
+                                    <tr class="bg-dark text-light">
+                                      <th id="participantID">Participant ID</th>
+                                      <th id="participantName">Participant Name</th>
+                                      <th id="paperID">Paper ID</th>
+                                      <th id="paymentStatus">Payment Status</th>
+                                      <th id="paymentReceipt" class="col-md-2">Payment Receipt</th>
+                                    </tr>
+                                  </thead>
+                                  <tbody>
+                                    @foreach($payment-table as $payment-table)
+                                        <tr>
+                                            <td>{{ $payment-table->participantID }}</td>
+                                            <td>{{ $payment-table->participantName }}</td>
+                                            <td>{{ $payment-table->paperID }}</td>
+                                        
+                                        <td>
+                                            <select class="" id="payment-status" name="payment-status">
+                                                <option value="paid" class="paid">Paid</option>
+                                                <option value="pending" class="pending">Pending</option>
+                                            </select>
+                                            </td>
+                                            <td>
+                                                <a href="" class="btn btn-primary">View Receipt</a>
+                                              </td>
+                                    </tr>`
+                                    @endforeach
+                                    <div class="form-check">
+                                        <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
+                                        <label class="form-check-label" for="flexCheckDefault"></label>
+                                    </label>
                                 </div>
-                            </div>
-                        </div>
-                        <div class="col-xl-5 col-xxl-6 d-none d-xl-block text-center"><img class="img-fluid rounded-3 my-5" src="assets/backdrop1.jpg" alt="..." /></div>
+                                    <tr>
+                                      <td>001</td>
+                                      <td>Muhammad</td>
+                                      <td>1550255</td>
+                                      <td>
+                                        <select class="" id="payment-status" name="payment-status">
+                                            <option value="paid" class="paid">Paid</option>
+                                            <option value="pending" class="pending">Pending</option>
+                                        </select>
+                                        </td>
+                                      <td>
+                                        <a href="" class="btn btn-primary">View Receipt</a>
+                                      </td>
+                                    </tr>
+                                    <tr>
+                                      <td>002</td>
+                                      <td>Hafiz</td>
+                                      <td>1550256</td>
+                                      <td>
+                                        <select id="payment-status" name="payment-status">
+                                        <option value="paid" class="paid">Paid</option>
+                                        <option value="pending" class="pending">Pending</option>
+                                    </select>
+                                </td>
+                                      <td><a href="" class="btn btn-primary">View Receipt</a>
+                                    </td>
+                                    </tr>
+                                    <tr>
+                                      <td>003</td>
+                                      <td>User</td>
+                                      <td>1550257</td>
+                                      <td>
+                                        <select id="payment-status" name="payment-status">
+                                            <option value="paid" class="paid">Paid</option>
+                                            <option value="pending" class="pending">Pending</option>
+                                        </select>
+                                    </td>
+                                      <td><a href="" class="btn btn-primary">View Receipt</a>
+                                      </td>
+                                    </tr>
+                                    <tr>
+                                        <td>003</td>
+                                        <td>User</td>
+                                        <td>1550257</td>
+                                        <td> 
+                                            <select id="payment-status" class="payment-status" name="payment-status">
+                                                <option value="paid" class="paid">Paid</option>
+                                                <option value="pending" class="pending">Pending</option>
+                                            </select>
+                                    </td>
+                                        <td><a href="" class="btn btn-primary">View Receipt</a>
+                                        </td>
+                                      </tr>
+                                    <tr>
+                                        <td>004</td>
+                                        <td>User</td>
+                                        <td>1550258</td>
+                                        <td> 
+                                            <select id="payment-status" name="payment-status">
+                                                <option value="paid" class="paid">Paid</option>
+                                                <option value="pending" class="pending">Pending</option>
+                                            </select>
+                                    </td>
+                                        <td><a href="" class="btn btn-primary">View Receipt</a>
+                                        </td>
+                                      </tr>
+                                    <tr>
+                                        <td>005</td>
+                                        <td>User</td>
+                                        <td>1550259</td>
+                                        <td> 
+                                            <select id="payment-status" name="payment-status">
+                                            <option value="paid" class="paid">Paid</option>
+                                            <option value="pending" class="pending">Pending</option>
+                                        </select>
+                                    </td>
+                                        <td><a href="" class="btn btn-primary">View Receipt</a>
+                                        </td>
+                                      </tr>
+                                    <tr>
+                                        <td>006</td>
+                                        <td>User</td>
+                                        <td>1550260</td>
+                                        <td> 
+                                            <select id="payment-status" name="payment-status">
+                                                <option value="paid" class="paid">Paid</option>
+                                                <option value="pending" class="pending">Pending</option>
+                                            </select>
+                                    </td>
+                                        <td><a href="" class="btn btn-primary">View Receipt</a>
+                                        </td>
+                                      </tr>
+                                    </div>
+                                  </tbody>
+                                </table>
+                              </div>
+                            <!-- End of List of papers -->
+
+                                <!-- Pagination -->
+                                <nav aria-label="Page navigation example">
+                                  <ul class="pagination">
+                                    <li class="page-item"><a class="page-link" href="#">Previous</a></li>
+                                    <li class="page-item"><a class="page-link" href="#">1</a></li>
+                                    <li class="page-item"><a class="page-link" href="#">2</a></li>
+                                    <li class="page-item"><a class="page-link" href="#">3</a></li>
+
+                        </div><!--- END CONTAINER -->	
                     </div>
                 </div>
             </header>
 
-            <!-- Features section-->
-            <section class="py-5" id="features">
-                <div class="container px-5 my-5">
-                    <div class="row gx-5">
-                        <div class="col-lg-4 mb-5 mb-lg-0"><h2 class="fw-bolder mb-0">LIS 2023 International Conference Welcomes Quality Research in The Area of :</h2></div>
-                        <div class="col-lg-8">
-                            <div class="row gx-5 row-cols-1 row-cols-md-2">
-                                <div class="col mb-5 h-100" > 
-                                    <h2 class="h5">- Engineering & Technology</h2>
-                                    <h2 class="h5">- Technical Vocational Education and Training (TVET)</h2>
-                                    <h2 class="h5">- Social Science</h2>
-                                    <h2 class="h5">- Information Technology (IT) & Communication</h2>
-                                    <h2 class="h5">- Environment & Health</h2>
-                                    <h2 class="h5">- Renewable energy</h2>
-                                    <h2 class="h5">- Commerce</h2>
-                                    <h2 class="h5">- Multi-Discipline</h2>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </section>
-
-            <!-- Participant section-->
-            <div class="py-5 bg-light">
-                <div class="container px-5 my-5">
-                    <div class="row gx-5 justify-content-center">
-                        <div class="col-lg-10 col-xl-7">
-                            <div class="text-center">
-                                <div class="fs-4 mb-4 fst-italic text-black">Hurry Up! Only 142 Seats Remaining Currently ..</div>
-                                <div class="d-flex align-items-center justify-content-center">
-                                    <!--<img class="rounded-circle me-3" src="https://dummyimage.com/40x40/ced4da/6c757d" alt="..." />
-                                    <div class="fw-bold">
-                                        Tom Ato
-                                        <span class="fw-bold text-primary mx-1">/</span>
-                                        CEO, Pomodoro
-                                    </div>-->
-                                </div>
-                            </div>
-                        </div>
-                    </div>
+       <!-- Footer-->
+       <footer class="bg-dark py-4 mt-auto">
+        <div class="container px-5">
+            <div class="row align-items-center justify-content-between flex-column flex-sm-row">
+                <div class="col-auto"><div class="small m-0 text-white">© 2023 LIGA ILMU SERANTAU 2023. All Rights Reserved. Design by Politeknik Mersing</div></div>
+                <div class="col-auto">
+                    <a class="link-light small" href="index.html">Home</a>
+                    <span class="text-white mx-1">&middot;</span>
+                    <a class="link-light small" href="FeConference.html">Conference</a>
+                    <span class="text-white mx-1">&middot;</span>
+                    <a class="link-light small" href="FeDownload.html">Download</a>
+                    <span class="text-white mx-1">&middot;</span>
+                    <a class="link-light small" href="FePayment.html">Payment</a>
+                    <span class="text-white mx-1">&middot;</span>
+                    <a class="link-light small" href="FePublication.html">Publication</a>
+                    <span class="text-white mx-1">&middot;</span>
+                    <a class="link-light small" href="FeFaq.html">Contact</a>
+                    <span class="text-white mx-1">&middot;</span>
+                    <a class="link-light small" href="FePrivacy.html">Privacy</a>
                 </div>
             </div>
-
-            <!-- Blog preview section-->
-            <section class="py-5">
-                <div class="container px-5 my-5">
-                    <div class="row gx-5 justify-content-center">
-                        <div class="col-lg-8 col-xl-6">
-                            <div class="text-center">
-                                <h2 class="fw-bolder">CONFERENCE AGENDA</h2>
-                                <h2 class="fw-bolder"> POLITEKNIK MERSING</h2>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="row gx-5">
-                        <div class="col-lg-4 mb-5">
-                            <div class="card h-100 shadow border-0">
-                            </div>
-                        </div>
-                    </div> 
-                    
-                    <!-- Call to action-->
-                    <aside class="bg-primary bg-gradient rounded-3 p-4 p-sm-5 mt-5">
-                        <div class="d-flex align-items-center justify-content-between flex-column flex-xl-row text-center text-xl-start">
-                            <div class="mb-4 mb-xl-0">
-                                <div class="fs-3 fw-bold text-white">New Item, delivered to you.</div>
-                                <div class="text-white-50">Sign up for our newsletter for the latest updates.</div>
-                            </div>
-                            <div class="ms-xl-4">
-                                <div class="input-group mb-2">
-                                    <input class="form-control" type="text" placeholder="Email address..." aria-label="Email address..." aria-describedby="button-newsletter" />
-                                    <button class="btn btn-outline-light" id="button-newsletter" type="button">Sign up</button>
-                                </div>
-                                <div class="small text-white-50">We care about privacy, and will never share your data.</div>
-                            </div>
-                        </div>
-                    </aside>
-                </div>
-            </section>
-        </main>
-
-        <!-- Footer-->
-        <footer class="bg-dark py-4 mt-auto">
-            <div class="container px-5">
-                <div class="row align-items-center justify-content-between flex-column flex-sm-row">
-                    <div class="col-auto"><div class="small m-0 text-white">© 2023 LIGA ILMU SERANTAU 2023. All Rights Reserved. Design by Politeknik Mersing</div></div>
-                    <div class="col-auto">
-                        <a class="link-light small" href="index.html">Home</a>
-                        <span class="text-white mx-1">&middot;</span>
-                        <a class="link-light small" href="FeConference.html">Conference</a>
-                        <span class="text-white mx-1">&middot;</span>
-                        <a class="link-light small" href="FeDownload.html">Download</a>
-                        <span class="text-white mx-1">&middot;</span>
-                        <a class="link-light small" href="FePublication.html">Publication</a>
-                        <span class="text-white mx-1">&middot;</span>
-                        <a class="link-light small" href="FeRegistration.html">Register</a>
-                        <span class="text-white mx-1">&middot;</span>
-                        <a class="link-light small" href="FeFaq.html">Contact</a>
-                        <span class="text-white mx-1">&middot;</span>
-                        <a class="link-light small" href="FePrivacy.html">Privacy</a>
-                    </div>
-                </div>
-            </div>
-        </footer>
+        </div>
+    </footer>
         <!-- Bootstrap core JS-->
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
         <!-- Core theme JS-->
