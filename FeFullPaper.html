@@ -50,7 +50,7 @@
             </nav>
 
             <!-- Header-->
-            <header class="bg-light text text-dark py-5">
+            <header class="bg-light text text-dark py-5"  id="sectionBlur">
                 <div class="container px-5 py-5">
                     <div id="contact" class="contact-area section-padding">
                         <div class="container">										
@@ -194,43 +194,11 @@
                                                 </div>
                                             </div>
                                         </form>
+
                                         <!-- HTML button element that will trigger the modal popup -->
                                         <div class="col-md-12 text-center">
-                                            <button type="submit" id="submitButton" class="button-submit" title="Submit your form!">Submit</button>
+                                            <button type="submit" id="submitButton" class="button-submit" title="Submit your form!" onclick="toggle()">Submit</button>
                                         </div>
-                                        
-                                        <!-- HTML modal popup element -->
-                                        <div id="btn-myModal" class="sub-modal">
-                                            <div class="sub-modal-content">
-                                            <span class="sub-close">&times;</span>
-                                            <p>Thank you for submitting!</p>
-                                            </div>
-                                        </div>
-                                        
-                                        <!-- JavaScript code that will create and show the popup -->
-                                        <script>
-                                            // Get a reference to the submit button element
-                                            const submitButton = document.getElementById("submitButton");
-                                        
-                                            // Get a reference to the modal popup element and the close button
-                                            const btnmodal = document.getElementById("btn-myModal");
-                                            const submitcloseButton = btnmodal.getElementsByClassName("sub-close")[0];
-                                        
-                                            // Add a click event listener to the submit button
-                                            submitButton.addEventListener("click", function() {
-                                            // Show the modal popup
-                                            btnmodal.style.display = "block";
-                                            });
-                                        
-                                            // Add a click event listener to the close button
-                                            submitcloseButton.addEventListener("click", function() {
-                                            // Hide the modal popup
-                                            btnmodal.style.display = "none";
-                                            // Redirect to another page using window.location
-                                            window.location.href = "FeLISregister.html";
-                                            });
-                                        </script>
-                                        
                             </div><!--- END ROW -->
                         </div><!--- END CONTAINER -->	
                     </div>
@@ -260,8 +228,25 @@
                 </div>
             </div>
         </footer>
+
+        <!--Popup Window-->
+        <div id="popup">
+            <h1>SUCCESS</h1>
+            <p>Your submission had been submitted successfully</p>
+            <button class="button-submit" onclick="toggle()">Done</button>
+        </div>
+
         <!-- Bootstrap core JS-->
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
+        <script type="text/javascript">
+            function toggle() {
+                var blur = document.getElementById('sectionBlur');
+                blur.classList.toggle('active')
+                var popup = document.getElementById('popup');
+                popup.classList.toggle('active')
+            }
+        </script>
+
         <!-- Core theme JS-->
         <!--<script src="js/scripts.js"></script>-->
     </body>
