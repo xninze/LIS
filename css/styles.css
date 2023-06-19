@@ -11652,15 +11652,11 @@ select {
   background-color: #fff;
 }
 
-/*option.paid {
-  color: green;
 
+.view-receipt {
+  border: none;
+  background: none;
 }
-
-option.pending {
-  color: red;
-
-}*/
 
 /*End Payment Treasurer*/
 
@@ -11805,3 +11801,4 @@ input[type="submit"]:hover {
 }
 
 /*--------------------------------------------END LOGIN PAGE---------------------------------------------*/
+

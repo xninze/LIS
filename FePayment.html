@@ -11,6 +11,7 @@
         <!-- Bootstrap icons-->
         <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.5.0/font/bootstrap-icons.css" rel="stylesheet" />
         <!-- Core theme CSS (includes Bootstrap)-->
+
         <link href="css/styles.css" rel="stylesheet" />
     </head>
     <body class="d-flex flex-column h-100">
@@ -60,7 +61,7 @@
             <!-- Filter options -->
                 <div id="paymentSearch" class="row col-md-6">
                     <form id="paymentSearchBar" class="form-group col-md-6">
-                        <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
+                        <input class="form-control mr-sm-2" id="filterInput" onkeyup="filterTable()" placeholder="Filter by participant ID ..." aria-label="Search">
                     </form>
                     <div class="row col-md-2">
                     <button id="paymentSearchBtn" class="btn btn-primary mb-2" id="search-btn" type="submit">Search</button>  
@@ -70,9 +71,13 @@
                             
                             <!-- List of papers -->
                             <div class="payment-table">
-                                <table>
+                                <table id="myTable">
                                   <thead>
                                     <tr class="bg-dark text-light">
+                                        <label class="customcheckbox m-b-20">
+                                            <input type="checkbox" id="mainCheckbox">
+                                            <span class="checkmark"></span>
+                                        </label>
                                       <th id="participantID">Participant ID</th>
                                       <th id="participantName">Participant Name</th>
                                       <th id="paperID">Paper ID</th>
@@ -86,7 +91,6 @@
                                             <td>{{ $payment-table->participantID }}</td>
                                             <td>{{ $payment-table->participantName }}</td>
                                             <td>{{ $payment-table->paperID }}</td>
-                                        
                                         <td>
                                             <select class="" id="payment-status" name="payment-status">
                                                 <option value="paid" class="paid">Paid</option>
@@ -94,9 +98,11 @@
                                             </select>
                                             </td>
                                             <td>
-                                                <a href="" class="btn btn-primary">View Receipt</a>
+                                                <button class="view-receipt">
+                                                    <span class="bi bi-file-earmark-arrow-down-fill" ></span> View Receipt
+                                                  </button>
                                               </td>
-                                    </tr>`
+                                    </tr>
                                     @endforeach
                                     <div class="form-check">
                                         <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
@@ -104,6 +110,10 @@
                                     </label>
                                 </div>
                                     <tr>
+                                        <label class="customcheckbox">
+                                            <input type="checkbox" class="listCheckbox">
+                                            <span class="checkmark"></span>
+                                        </label>
                                       <td>001</td>
                                       <td>Muhammad</td>
                                       <td>1550255</td>
@@ -114,7 +124,9 @@
                                         </select>
                                         </td>
                                       <td>
-                                        <a href="" class="btn btn-primary">View Receipt</a>
+                                        <button class="view-receipt">
+                                            <span class="bi bi-file-earmark-arrow-down-fill" ></span> View Receipt
+                                          </button>
                                       </td>
                                     </tr>
                                     <tr>
@@ -127,7 +139,10 @@
                                         <option value="pending" class="pending">Pending</option>
                                     </select>
                                 </td>
-                                      <td><a href="" class="btn btn-primary">View Receipt</a>
+                                <td>
+                                    <button class="view-receipt">
+                                            <span class="bi bi-file-earmark-arrow-down-fill" ></span> View Receipt
+                                          </button>
                                     </td>
                                     </tr>
                                     <tr>
@@ -140,7 +155,10 @@
                                             <option value="pending" class="pending">Pending</option>
                                         </select>
                                     </td>
-                                      <td><a href="" class="btn btn-primary">View Receipt</a>
+                                      <td>
+                                        <button class="view-receipt">
+                                            <span class="bi bi-file-earmark-arrow-down-fill" ></span> View Receipt
+                                          </button>
                                       </td>
                                     </tr>
                                     <tr>
@@ -153,7 +171,10 @@
                                                 <option value="pending" class="pending">Pending</option>
                                             </select>
                                     </td>
-                                        <td><a href="" class="btn btn-primary">View Receipt</a>
+                                        <td>
+                                            <button class="view-receipt">
+                                                <span class="bi bi-file-earmark-arrow-down-fill" ></span> View Receipt
+                                              </button>
                                         </td>
                                       </tr>
                                     <tr>
@@ -166,7 +187,10 @@
                                                 <option value="pending" class="pending">Pending</option>
                                             </select>
                                     </td>
-                                        <td><a href="" class="btn btn-primary">View Receipt</a>
+                                        <td>
+                                            <button class="view-receipt">
+                                                <span class="bi bi-file-earmark-arrow-down-fill" ></span> View Receipt
+                                              </button>
                                         </td>
                                       </tr>
                                     <tr>
@@ -179,7 +203,10 @@
                                             <option value="pending" class="pending">Pending</option>
                                         </select>
                                     </td>
-                                        <td><a href="" class="btn btn-primary">View Receipt</a>
+                                        <td>
+                                            <button class="view-receipt">
+                                                <span class="bi bi-file-earmark-arrow-down-fill" ></span> View Receipt
+                                              </button>
                                         </td>
                                       </tr>
                                     <tr>
@@ -192,12 +219,36 @@
                                                 <option value="pending" class="pending">Pending</option>
                                             </select>
                                     </td>
-                                        <td><a href="" class="btn btn-primary">View Receipt</a>
+                                        <td>
+                                            <button class="view-receipt">
+                                            <span class="bi bi-file-earmark-arrow-down-fill" ></span> View Receipt
+                                          </button>
                                         </td>
                                       </tr>
                                     </div>
                                   </tbody>
                                 </table>
+                                <script>
+                                    function filterTable() {
+                                        var input, filter, table, tr, td, i, txtValue;
+                                        input = document.getElementById("filterInput");
+                                        filter = input.value.toUpperCase();
+                                        table = document.getElementById("myTable");
+                                        tr = table.getElementsByTagName("tr");
+                            
+                                        for (i = 0; i < tr.length; i++) {
+                                            td = tr[i].getElementsByTagName("td")[0];
+                                            if (td) {
+                                                txtValue = td.textContent || td.innerText;
+                                                if (txtValue.toUpperCase().indexOf(filter) > -1) {
+                                                    tr[i].style.display = "";
+                                                } else {
+                                                    tr[i].style.display = "none";
+                                                }
+                                            }
+                                        }
+                                    }
+                                </script>
                               </div>
                             <!-- End of List of papers -->
 
